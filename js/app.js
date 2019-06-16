@@ -43,3 +43,7 @@ LmApp.populateSubcategories = function(category) {
 LmApp.populateSubcategories('category001');
 document.getElementById('subcategory_modal').style.display = 'block';
 
+document.getElementById('close_subcategory_btn').onclick = function(evt){
+    document.getElementById('subcategory_modal').style.display = 'none';    
+};
+
