@@ -29,6 +29,30 @@
         </ul>
     </nav>
 
+    <!-- The Modal -->
+    <div class="modal" id="subcategory_modal">
+        <div class="modal-dialog">
+            <div class="modal-content lm-modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header lm-modal-header">
+                    <p><br/>Which Family Law issue(s) apply to your case?</p>
+                    <button type="button" class="close">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <div class="lm-modal-body-footer">
+                        <button class="btn btn-primary lm-btn">FIND A LAWYER NOW</button>
+                        <p></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div class="lm-main-section">
         <div class="lm-tagline-large1">Find a Lawyer for your Legal Issue</div>
         <div class="lm-tagline-large2">Fast, Free and Confidential</div>
@@ -36,6 +60,10 @@
         </div>
     </div>
 
-  
+    <script src="js/app.js"></script>
+    <script>
+        document.getElementById('subcategory_modal').style.display = 'block';
+    </script>
+
 </body>
 </html>
