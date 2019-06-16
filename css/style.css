@@ -1,0 +1,117 @@
+/* Custom fonts visually badly guessed from preview */ 
+@font-face {
+    font-family: 'Gotham-Black';
+    src: url('/thirdparty/_fonts/Gotham/regular/Gotham-Black.otf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham-Bold';
+    src: url('/thirdparty/_fonts/Gotham/regular/Gotham-Bold.otf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham-Medium';
+    src: url('/thirdparty/_fonts/Gotham/regular/Gotham-Medium.otf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham-Book';
+    src: url('/thirdparty/_fonts/Gotham/regular/Gotham-Book.otf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham-Book-Rounded';
+    src: url('/thirdparty/_fonts/Gotham/rounded/GothamRnd-Book.otf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham-Bold-Rounded';
+    src: url('/thirdparty/_fonts/Gotham/rounded/GothamRnd-Bold.otf');
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Gotham-Medium';
+  }
+  
+  .COMMENT-lm-nav {
+    vertical-align: middle;
+  }
+  
+  .COMMENT-lm-navbar-brand {
+  }
+  
+  .lm-navbar-brand-logo{
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  ul.lm-navbar-selling-points {
+    font-family: 'Gotham-Bold';
+    display: inline-block;
+    list-style: none;
+    padding-left: 0px;
+    float: right;
+  }
+  
+  ul.lm-navbar-selling-points li:before {
+    content:  '✓ ';
+    color: rgb(62, 157, 3);
+    font-weight: bold;
+  }
+  
+  COMMENT-.lm-clearer {
+    clear: both;
+  }
+  
+  .lm-main-section {
+    background-color: rgb(3, 45, 108);
+    color: #ffffff;
+  }
+  
+  .lm-tagline-large1 {
+    font-size: 32pt;
+  }
+  
+  .lm-tagline-large2 {
+    font-family: 'Gotham-Bold';
+    font-size: 23pt;
+  }
+    
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (max-width: 767px) {
+    .lm-tagline-large1 {
+      text-align: center;
+    }
+  
+    .lm-tagline-large2 {
+      text-align: center;
+    }
+  } 
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .lm-navbar-brand-logo {
+      Awidth: 60%;
+      max-width: 600px;
+      padding-left: 40px;
+    }
+  
+    ul.lm-navbar-selling-points {
+      padding-right: 80px;
+    }
+  
+    .lm-main-section {
+      padding-left: 60px;
+    }
+  } 
+  
