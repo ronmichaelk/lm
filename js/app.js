@@ -10,8 +10,10 @@ var LmConstants = {};
 LmConstants.SUBCATEGORY_MODAL = '#subcategory_modal';
 LmConstants.SUBCATEGORY_CONTENT_HOLDER = '#subcategory_content_container';
 LmConstants.SUBCATEGORY_CLOSE = '#close_subcategory_btn';
+LmConstants.SUBCATEGORY_CATEGORY_LABEL = '#subcategory_modal_category_label';
 LmConstants.CATEGORY_CONTENT_HOLDER = '#category_content';
 LmConstants.CATEGORY_DROPDOWN = '#category';
+
 
 // --------------------------------------------------------------------
 
@@ -35,6 +37,14 @@ LmApp.populateSubcategories = function(category) {
     if (! data) {
         return;
     }
+
+    var info = DataManager.getCategory();
+    if (! info) {
+        return;
+    }
+
+    var label = info['label'];
+    $LM(LmConstants.SUBCATEGORY_CATEGORY_LABEL).innerHTML = label;
 
     var html = '';
     for (var prop in data) {
