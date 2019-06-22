@@ -98,7 +98,7 @@ DataManager.categoryMapping = {
  * @return map of subcategory information
  */
 DataManager.getSubCategories = function(category) {
-    var info = DataManager.getCategory();
+    var info = DataManager.getCategory(category);
     if (!info) {
         return null;
     }
