@@ -154,12 +154,12 @@
     padding-bottom: 20px;
   }
   
-  .lm-textfield, .lm-dropdown {
+  .lm-searchfield, .lm-dropdown {
     width: 80%;
     border: 0px none;
   }
 
-  .lm-textfield:focus {
+  .lm-searchfield:focus {
     border: 0px none;
     outline: none;
   }
@@ -246,6 +246,24 @@
     background-color: rgb(188, 211, 227);
     font-family: 'Gotham-Bold';
     font-weight: bolder;
+  }
+
+
+  .lm-searchfield-content {
+    display: none;
+    background-color: #ffffff;
+    color: #000000;
+    position: absolute;
+    margin-top: 15pt;
+    margin-left: 15pt;
+
+    padding: 5pt 25pt 5pt 25pt;
+
+    cursor: pointer;
+  }
+
+  .lm-searchfield-content-zip {
+    color: rgb(108, 194, 255);
   }
 
   #subcategory_content_container {
