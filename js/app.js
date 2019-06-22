@@ -37,40 +37,34 @@ LmApp.find = function(selector) {
 
 $LM = LmApp.find;
 
-LmApp.populateSubcategories = function(category) {
-    var data = DataManager.getSubCategories(category);
-    console.log(data);
+/** 
+ * Initialize the "app"
+ */
+LmApp.init = function() {
 
-    if (! data) {
-        return;
+    // Initialize the data manager
+    DataManager.init();
+
+    LmApp.initCategoriesDropDown();
+
+    // Attach handlers to the zip search field
+    var zipId = LmConstants.ZIP_SEARCHFIELD;
+    $LM(zipId).onkeyup = LmApp.handleChangeZip;
+    $LM(zipId).oncut = LmApp.handleChangeZip;
+    $LM(zipId).onpaste = LmApp.handleChangeZip;
+
+    window.onclick = function(evt) {
+        //console.log(evt.target);
+        var className = evt.target.className;
+
+        // Check if category dropdown is open
+        if (LmApp.isOpenCategoriesDropDown()) {
+            // Check if something outside the dropdown is clicked
+            if (className.indexOf('lm-dropdown') == -1) {
+                LmApp.openCategoriesDropDown(false);
+            }
+        }
     }
-
-    var info = DataManager.getCategory();
-    if (! info) {
-        return;
-    }
-
-    var label = info['label'];
-    $LM(LmConstants.SUBCATEGORY_CATEGORY_LABEL).innerHTML = label;
-
-    var html = '';
-    for (var prop in data) {
-        if (! data.hasOwnProperty(prop)) {
-            continue;
-        } 
-        var label = data[prop]['label'];
-
-        html = html + ''
-            + '<div class="col-sm-12 col-md-6">'
-            + '    <div class="form-check">' 
-            + '        <label class="form-check-label">'
-            + '            <input type="checkbox" class="form-check-input" value="' + prop + '">' + label
-            + '        </label>'
-            + '    </div>'
-            + '</div>';
-    }
-
-    $LM(LmConstants.SUBCATEGORY_CONTENT_HOLDER).innerHTML = html;
 };
 
 LmApp.initCategoriesDropDown = function() {
@@ -99,21 +93,46 @@ LmApp.initCategoriesDropDown = function() {
     $LM(LmConstants.CATEGORY_CONTENT_HOLDER).innerHTML = html;
 };
 
-LmApp.init = function() {
-    LmApp.initCategoriesDropDown();
-
-    window.onclick = function(evt) {
-        //console.log(evt.target);
-        var className = evt.target.className;
-
-        // Check if category dropdown is open
-        if (LmApp.isOpenCategoriesDropDown()) {
-            // Check if something outside the dropdown is clicked
-            if (className.indexOf('lm-dropdown') == -1) {
-                LmApp.openCategoriesDropDown(false);
-            }
-        }
+/**
+ * Populate the subcategories dialog with corresponding data
+ * associated with the specified category code
+ * 
+ * @param category category code
+ */
+LmApp.populateSubcategories = function(category) {
+    var info = DataManager.getCategory(category);
+    if (! info) {
+        return;
     }
+
+    var data = info['subcategories'];
+    console.log(data);
+
+    if (! data) {
+        return;
+    }
+
+    var label = info['label'];
+    $LM(LmConstants.SUBCATEGORY_CATEGORY_LABEL).innerHTML = label;
+
+    var html = '';
+    for (var prop in data) {
+        if (! data.hasOwnProperty(prop)) {
+            continue;
+        } 
+        var label = data[prop]['label'];
+
+        html = html + ''
+            + '<div class="col-sm-12 col-md-6">'
+            + '    <div class="form-check">' 
+            + '        <label class="form-check-label">'
+            + '            <input type="checkbox" class="form-check-input" value="' + prop + '">' + label
+            + '        </label>'
+            + '    </div>'
+            + '</div>';
+    }
+
+    $LM(LmConstants.SUBCATEGORY_CONTENT_HOLDER).innerHTML = html;
 };
 
 /**
@@ -199,10 +218,6 @@ LmApp.handleChangeZip = function(evt) {
         $LM(LmConstants.ZIP_SEARCHFIELD_CONTENT).style.display = 'none';
     }
 };
-
-$LM('#zip').onkeyup = LmApp.handleChangeZip;
-$LM('#zip').oncut = LmApp.handleChangeZip;
-$LM('#zip').onpaste = LmApp.handleChangeZip;
 
 LmApp.init();
 
