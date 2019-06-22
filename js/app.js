@@ -165,13 +165,21 @@ $LM(LmConstants.CATEGORY_DROPDOWN).onclick = function(evt){
     LmApp.openCategoriesDropDown(! flag);
 };
 
-
-$LM('#zip').onkeyup = function(evt) {
+LmApp.handleChangeZip = function(evt) {
     var value = evt.target.value;
+    console.log(value);
+
+    var address = DataManager.findAddressByZip(value);
+    console.log(address);
 };
+
+$LM('#zip').onkeyup = LmApp.handleChangeZip;
+$LM('#zip').oncut = LmApp.handleChangeZip;
+$LM('#zip').onpaste = LmApp.handleChangeZip;
+
+LmApp.init();
 
 //LmApp.showSubcategoriesDialog('category001');
 
-LmApp.init();
 
 
