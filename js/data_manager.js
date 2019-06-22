@@ -118,6 +118,38 @@ DataManager.getCategory = function(category) {
 };
 
 /**
+ * Find addresses associated with the zip code
+ * 
+ * @param zip zip code or postal code
+ *
+ * @return corresponding addresses; otherwise, blank
+ */
+DataManager.findAddressesByZip = function(zip) {
+    var map = DataManager.addressMap;
+
+    if (zip.length < 3) {
+        return null;
+    }
+
+    var address = [];
+    for (var key in map) {
+        if (! map.hasOwnProperty(key)) {
+            continue;
+        } 
+
+        if (key.startsWith(zip)) {
+            address[address.length] = map[key];
+        }
+    }
+
+    if (address.length == 0) {
+        address = null;
+    }
+
+    return address;
+};
+
+/**
  * Find address associated with the zip code
  * 
  * @param zip zip code or postal code
@@ -125,18 +157,5 @@ DataManager.getCategory = function(category) {
  * @return corresponding address; otherwise, blank
  */
 DataManager.findAddressByZip = function(zip) {
-    var entries = DataManager.addressList;
-    var label = '';
-
-    zip = ' ' + zip;
-
-    for (var i=0; i < entries.length; i++) {
-        var address = entries[i];
-        if (address.endsWith(zip)) {
-            label = address;
-            break;
-        }
-    }
-
-    return label;
+    return DataManager.addressMap[zip];
 };
