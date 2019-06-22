@@ -22,6 +22,8 @@ LmConstants.CATEGORY_CONTENT_HOLDER = '#category_content';
 LmConstants.ZIP_SEARCHFIELD = '#zip';
 LmConstants.ZIP_SEARCHFIELD_CONTENT = '#zip_content';
 
+LmConstants.BLOCK_OVERLAY = '#overlay_block';
+
 // --------------------------------------------------------------------
 
 function LmApp() {
@@ -142,6 +144,7 @@ LmApp.populateSubcategories = function(category) {
  * @param category category code
  */
 LmApp.showSubcategoriesDialog = function(category) {
+    LmApp.activateBlockOverlay(true);
     LmApp.populateSubcategories(category);
     $LM(LmConstants.SUBCATEGORY_MODAL).style.display = 'block';
 };
@@ -151,6 +154,7 @@ LmApp.showSubcategoriesDialog = function(category) {
  */
 LmApp.hideSubcategoriesDialog = function() {
     $LM(LmConstants.SUBCATEGORY_MODAL).style.display = 'none';
+    LmApp.activateBlockOverlay(false);
 };
 
 /**
@@ -224,6 +228,17 @@ LmApp.handleChangeZip = function(evt) {
     }
 };
 
+LmApp.activateBlockOverlay = function(flag) {
+    var overlay = $LM(LmConstants.BLOCK_OVERLAY);
+    
+    if (flag) {
+        overlay.style.display = 'block';
+    } else {
+        overlay.style.display = 'none';
+    }
+};
+
 LmApp.init();
 
 //LmApp.showSubcategoriesDialog('category001');
+
