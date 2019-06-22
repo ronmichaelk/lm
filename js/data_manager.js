@@ -5,6 +5,8 @@
 function DataManager() {
 };
 
+DataManager.addressList = ADDRESSES;
+
 /**
  * Subcategory Mapping: key - label  
  */
@@ -100,6 +102,26 @@ DataManager.getCategory = function(category) {
     return DataManager.categoryMapping[category];
 };
 
+/**
+ * Find address associated with the zip code
+ * 
+ * @param zip zip code or postal code
+ *
+ * @return corresponding address; otherwise, blank
+ */
 DataManager.findAddressByZip = function(zip) {
-         
+    var entries = DataManager.addressList;
+    var label = '';
+
+    zip = ' ' + zip;
+
+    for (var i=0; i < entries.length; i++) {
+        var address = entries[i];
+        if (address.endsWith(zip)) {
+            label = address;
+            break;
+        }
+    }
+
+    return label;
 };
