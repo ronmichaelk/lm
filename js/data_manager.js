@@ -102,6 +102,27 @@ DataManager.clientReviewEntries = [
     ['Would recommend to friend', 5]
 ];
 
+DataManager.testimonials = [
+    {
+        img: '/img/profile_mitchelle.png',
+        who: 'Mitchell M.',
+        from: 'Cherry Hill, NJ',
+        what: 'Family Law'
+    },
+    {
+        img: '/img/profile_joel.png',
+        who: 'Joel C',
+        from: 'Little Rock, AK',
+        what: 'Job &amp; Employment Law'
+    },
+    {
+        img: '/img/profile_brigida.png',
+        who: 'Brigida R.',
+        from: 'Dallas, TX',
+        what: 'Family Law'
+    }
+];
+
 /**
  * Get subcategories of the specified category code
  * 
