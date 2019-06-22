@@ -7,11 +7,14 @@
     <meta name="description" content="optometry lab">
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css" type="text/css" >
 
     <link rel="stylesheet" href="thirdparty/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="thirdparty/bootstrap/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="thirdparty/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="thirdparty/_fonts/FontAwesome/font-awesome.min.css">
+    
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" >
 
     <title>Find a Lawyer Near You | Find an Attorney you need - LegalMatch</title>
 </head>
@@ -38,7 +41,7 @@
                 <div class="modal-header lm-modal-header">
                     <p><br/>  
                         <span class="badge badge-warning lm-badge">3</span>
-                        Which <b>Family Law</b> issue(s) apply to your case?</p>
+                        Which <b><span ></span></b> issue(s) apply to your case?</p>
                     <button type="button" class="close" onFocus="this.blur()" id="close_subcategory_btn">&times;</button>
                 </div>
 
@@ -47,7 +50,7 @@
                     <div class="row" id="subcategory_content_container">
                     </div>
                     <div class="lm-modal-body-footer">
-                        <button class="btn btn-primary lm-btn">FIND A LAWYER NOW</button>
+                        <button class="btn btn-primary lm-btn lm-rounded-control">FIND A LAWYER NOW</button>
                         <p></p>
                     </div>
                 </div>
@@ -56,13 +59,32 @@
         </div>
     </div>
 
-    <div class="lm-main-section">
-        <div class="lm-tagline-large1">Find a Lawyer for your Legal Issue</div>
-        <div class="lm-tagline-large2">Fast, Free and Confidential</div>
-        <div class="container">
+    <!-- Category Modal -->
+    <div class="modal" id="subcategory_modal">
+        <div class="modal-dialog lm-modal-dialog modal-dialog-centered">
+            <div class="modal-content lm-modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header lm-modal-header">
+                    <button type="button" class="close" onFocus="this.blur()" id="close_subcategory_btn">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body lm-modal-body">
+                    <div class="row" id="subcategory_content_container">
+                    </div>
+                    <div class="lm-modal-body-footer">
+                        <button class="btn btn-primary lm-btn lm-rounded-control">FIND A LAWYER NOW</button>
+                        <p></p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
+
+    
     <script src="js/data_manager.js"></script>
     <script src="js/app.js"></script>
 
