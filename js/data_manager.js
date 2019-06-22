@@ -90,6 +90,18 @@ DataManager.categoryMapping = {
     }
 };
 
+DataManager.clientReviewEntries = [
+    ['Overall', 5], 
+    ['Responded in a timely manner', 4],
+    ['Answered questions early', 5],
+    ['Understood needs', 4],
+    ['Gave complete and clear information', 5],
+    ['Knowledgeable in legal area', 4], 
+    ['Good value for money', 5], 
+    ['Would hire again', 4],
+    ['Would recommend to friend', 5]
+];
+
 /**
  * Get subcategories of the specified category code
  * 
