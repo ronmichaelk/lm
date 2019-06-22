@@ -5,7 +5,22 @@
 function DataManager() {
 };
 
-DataManager.addressList = ADDRESSES;
+
+DataManager.init = function() {
+    var entries = ADDRESSES;
+    var map = {};
+    for (var i=0; i < entries.length; i++) {
+        var entry = entries[i];
+
+        var parts = entry.split(' ');
+        var zip = parts[parts.length - 1]; 
+
+        var address = entry.split(',')[1].trim();
+        map[zip] = address.replace(' ' + zip, '');
+    }
+    DataManager.addressMap = map;
+};
+
 
 /**
  * Subcategory Mapping: key - label  
