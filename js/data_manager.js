@@ -5,6 +5,23 @@
 function DataManager() {
 };
 
+
+DataManager.init = function() {
+    var entries = ADDRESSES;
+    var map = {};
+    for (var i=0; i < entries.length; i++) {
+        var entry = entries[i];
+
+        var parts = entry.split(' ');
+        var zip = parts[parts.length - 1]; 
+
+        var address = entry.split(',')[1].trim();
+        map[zip] = address.replace(' ' + zip, '');
+    }
+    DataManager.addressMap = map;
+};
+
+
 /**
  * Subcategory Mapping: key - label  
  */
@@ -81,7 +98,7 @@ DataManager.categoryMapping = {
  * @return map of subcategory information
  */
 DataManager.getSubCategories = function(category) {
-    var info = DataManager.getCategory();
+    var info = DataManager.getCategory(category);
     if (!info) {
         return null;
     }
@@ -100,6 +117,45 @@ DataManager.getCategory = function(category) {
     return DataManager.categoryMapping[category];
 };
 
+/**
+ * Find addresses associated with the zip code
+ * 
+ * @param zip zip code or postal code
+ *
+ * @return corresponding addresses; otherwise, blank
+ */
+DataManager.findAddressesByZip = function(zip) {
+    var map = DataManager.addressMap;
+
+    if (zip.length < 3) {
+        return null;
+    }
+
+    var address = [];
+    for (var key in map) {
+        if (! map.hasOwnProperty(key)) {
+            continue;
+        } 
+
+        if (key.startsWith(zip)) {
+            address[address.length] = map[key];
+        }
+    }
+
+    if (address.length == 0) {
+        address = null;
+    }
+
+    return address;
+};
+
+/**
+ * Find address associated with the zip code
+ * 
+ * @param zip zip code or postal code
+ *
+ * @return corresponding address; otherwise, blank
+ */
 DataManager.findAddressByZip = function(zip) {
-         
+    return DataManager.addressMap[zip];
 };
