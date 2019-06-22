@@ -22,6 +22,8 @@ LmConstants.CATEGORY_CONTENT_HOLDER = '#category_content';
 LmConstants.ZIP_SEARCHFIELD = '#zip';
 LmConstants.ZIP_SEARCHFIELD_CONTENT = '#zip_content';
 
+LmConstants.REVIEWS_MODAL = '#client_reviews_modal';
+
 LmConstants.BLOCK_OVERLAY = '#overlay_block';
 
 // --------------------------------------------------------------------
@@ -228,6 +230,38 @@ LmApp.handleChangeZip = function(evt) {
     }
 };
 
+LmApp.createClientReviewEntry = function(label, numStars) {
+    var html = ''
+        + '<div class="lm-client-reviews-rating-entry">'
+        +   label 
+        +   '<span class="lm-client-reviews-rating-stars pull-right">';
+
+    for (var i=0; i<numStars; i++) {
+        html += '<span class="fa fa-star lm-star-checked"></span>';
+    }
+
+    for (var i=numStars; i<5; i++) {
+        html += '<span class="fa fa-star"></span>';
+    }
+
+    html += '</span></div>';
+    return html;
+};
+
+LmApp.showClientReviewsDialog = function(name, img, info1, info2) {
+    $LM(LmConstants.REVIEWS_MODAL).style.display = 'block';
+
+    var entries = DataManager.clientReviewEntries;
+    var ratingHtml = LmApp.createClientReviewEntry('<span class="lm-bold">' + entries[0][0] + '</span>', entries[0][1]);
+
+    for (var i=1; i<entries.length; i++) {
+        var entry = entries[i];
+        ratingHtml += LmApp.createClientReviewEntry(entry[0], entry[1]);
+    }
+
+    $LM('#client_reviews_ratings_container').innerHTML = ratingHtml;
+};
+
 LmApp.activateBlockOverlay = function(flag) {
     var overlay = $LM(LmConstants.BLOCK_OVERLAY);
     
@@ -241,4 +275,5 @@ LmApp.activateBlockOverlay = function(flag) {
 LmApp.init();
 
 //LmApp.showSubcategoriesDialog('category001');
+LmApp.showClientReviewsDialog();
 
