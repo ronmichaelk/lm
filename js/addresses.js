@@ -4,6 +4,9 @@
  */
 var ADDRESSES = 
     [
+        "AAA, Nowheresville XX 00000",
+        "BBB, Morris IL 60450",
+
         "777 Brockton Avenue, Abington MA 2351",
         "30 Memorial Drive, Avon MA 2322",
         "250 Hartford Avenue, Bellingham MA 2019",
