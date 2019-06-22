@@ -212,6 +212,11 @@ LmApp.handleChangeZip = function(evt) {
         address + ', <span class="lm-searchfield-content-zip">' + zip + '</span>';
     $LM(LmConstants.ZIP_SEARCHFIELD_CONTENT).style.display = 'block';
 
+    $LM(LmConstants.ZIP_SEARCHFIELD_CONTENT).onclick = function(evt) {
+        $LM(LmConstants.ZIP_SEARCHFIELD).value = address + ', ' + zip;
+        $LM(LmConstants.ZIP_SEARCHFIELD_CONTENT).style.display = 'none';
+    };
+
     // Check if enter key was pressed
     if (13 == evt.keyCode) {
         $LM(LmConstants.ZIP_SEARCHFIELD).value = address + ', ' + zip;
