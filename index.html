@@ -56,98 +56,41 @@
                     </div>
                 </div>            
             </div>
-            <section class="col-md-6 lm-testimonials-area">
+            <section class="hidden col-md-6 lm-testimonials-area" id="testimonials_container">
                 <h3 class="lm-testimonials-header">Clients review LegalMatch lawyers</h3>
 
-                <div class="row">
-                    <div class="col-sm-3 lm-testimonial-profile">
-                        <img src="/img/profile_mitchelle.png"/> 
-                        <div class="lm-testimonial-who">Mitchell M.</div>
-                        <div class="lm-testimonial-from">Cherry Hill, NJ</div>
-                    </div>
-                    <div class="col-sm-9 pull-left">
-                        <div>
-                            <span class="lm-testimonial-category">Family Law</span>
-                            <span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                            </span>
-                        </div>
-                        <p class="lm-testimonial-text"> 
-                        &ldquo;
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<!-- ut labore et-->...
-                        &rdquo;
-                        </p>
-                        <div class="lm-testimonial-details-link pull-right">
-                            Read Review
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="lm-testimonial-divider"/>
-
-                <div class="row">
-                    <div class="col-sm-3 lm-testimonial-profile">
-                        <img src="/img/profile_joel.png"/> 
-                        <div class="lm-testimonial-who">Joel C.</div>
-                        <div class="lm-testimonial-from">Little Rock, AK</div>
-                    </div>
-                    <div class="col-sm-9 pull-left">
-                        <div>
-                            <span class="lm-testimonial-category">Family Law</span>
-                            <span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                            </span>
-                        </div>
-                        <p class="lm-testimonial-text"> 
-                        &ldquo;
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<!-- ut labore et-->...
-                        &rdquo;
-                        </p>
-                        <div class="lm-testimonial-details-link pull-right">
-                            Read Review
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="lm-testimonial-divider"/>
-
-                <div class="row">
-                    <div class="col-sm-3 lm-testimonial-profile">
-                        <img src="/img/profile_brigida.png"/> 
-                        <div class="lm-testimonial-who">Brigida R.</div>
-                        <div class="lm-testimonial-from">Dallas, TX</div>
-                    </div>
-                    <div class="col-sm-9 pull-left">
-                        <div>
-                            <span class="lm-testimonial-category">Family Law</span>
-                            <span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                            </span>
-                        </div>
-                        <p class="lm-testimonial-text"> 
-                        &ldquo;
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<!-- ut labore et-->...
-                        &rdquo;
-                        </p>
-                        <div class="lm-testimonial-details-link pull-right">
-                            Read Review
-                        </div>
-                    </div>
-                </div>
-    
             </section>
+
+            <div id="testimonial_template">
+                <div class="row">
+                        <div class="col-sm-3 lm-testimonial-profile">
+                            <img src="__IMAGE__"/> 
+                            <div class="lm-testimonial-who">__WHO__</div>
+                            <div class="lm-testimonial-from">__FROM__</div>
+                        </div>
+                        <div class="col-sm-9 pull-left">
+                            <div>
+                                <span class="lm-testimonial-category">__WHAT__</span>
+                                <span>
+                                    <span class="fa fa-star lm-star-checked"></span>
+                                    <span class="fa fa-star lm-star-checked"></span>
+                                    <span class="fa fa-star lm-star-checked"></span>
+                                    <span class="fa fa-star lm-star-checked"></span>
+                                    <span class="fa fa-star lm-star-checked"></span>
+                                </span>
+                            </div>
+                            <p class="lm-testimonial-text"> 
+                            &ldquo;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<!-- ut labore et-->...
+                            &rdquo;
+                            </p>
+                            <div class="lm-testimonial-details-link pull-right" onclick="__ONCLICK__">
+                                Read Review
+                            </div>
+                        </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -223,12 +166,12 @@
                     <div class="modal-body lm-modal-body">
                         <div class="row lm-client-reviews-profile-container">
                             <span class="lm-client-review-profile">
-                                <img src="/img/profile_mitchelle.png"/> 
+                                <img id="review_img" src=""/> 
                             </span>
                             <span>
-                                <div class="lm-client-review-who">Brigida R.</div>
-                                <div class="lm-client-review-from">Dallas, TX</div>
-                                <div class="lm-client-review-what">Family Law</div>
+                                <div class="lm-client-review-who" id="review_who"></div>
+                                <div class="lm-client-review-from" id="review_from"></div>
+                                <div class="lm-client-review-what" id="review_what"></div>
                             </span>
                         </div>
 
@@ -270,7 +213,7 @@
                         </div>
     
                         <div class="lm-client-reviews-modal-footer">
-                            <span class="lm-client-reviews-modal-close-link">CLOSE</span>
+                            <span class="lm-client-reviews-modal-close-link" id="close_client_review_link">CLOSE</span>
                         </div>
                     </div>
     
