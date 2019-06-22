@@ -73,8 +73,31 @@ DataManager.categoryMapping = {
     }
 };
 
+/**
+ * Get subcategories of the specified category code
+ * 
+ * @param category category code
+ * 
+ * @return map of subcategory information
+ */
 DataManager.getSubCategories = function(category) {
-    return DataManager.categoryMapping[category]['subcategories'];
+    var info = DataManager.getCategory();
+    if (!info) {
+        return null;
+    }
+
+    return info['subcategories'];
+};
+
+/**
+ * Get category information details
+ * 
+ * @param category category code
+ * 
+ * @return category info with keys: label, subcategories
+ */
+DataManager.getCategory = function(category) {
+    return DataManager.categoryMapping[category];
 };
 
 DataManager.findAddressByZip = function(zip) {
