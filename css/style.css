@@ -37,6 +37,7 @@
   
   body {
     font-family: 'Gotham-Medium';
+    -webkit-font-smoothing: antialiased;
   }
   
   .COMMENT-lm-nav {
@@ -92,7 +93,7 @@
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
-  
+
   .lm-modal-body {
     border: 0px none !important;
     padding-top: 0px !important;
@@ -109,16 +110,19 @@
   .lm-modal-body-footer {
     text-align: center;
   }
-  
-  .lm-btn {
-    font-family: 'Gotham-Bold';
-    font-size: 10pt !important;
 
+  .lm-rounded-control {
     -webkit-border-radius: 50px !important;
     -moz-border-radius: 50px !important;
     border-radius: 50px !important;
 
     padding: 15px 25px 15px 25px !important;
+  }
+  
+  .lm-btn {
+    font-family: 'Gotham-Bold';
+    font-size: 10pt !important;
+
     background-color: rgb(2, 55, 123) !important;
   }
   
@@ -130,14 +134,125 @@
     -moz-border-radius: 50px !important;
     border-radius: 50px !important;
 
-    padding: 12px 24px 12px 14px !important;;
+    padding: 12px 24px 12px 14px !important;
     width: 20px !important;
+    text-align: left;
     color: #ffffff !important;
+  }
+
+  .lm-main-row,
+  .lm-form-area {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+
+  .lm-form-element {
+    font-family: 'Gotham-Book';
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .lm-textfield, .lm-dropdown {
+    width: 80%;
+    border: 0px none;
+  }
+
+  .lm-textfield:focus {
+    border: 0px none;
+    outline: none;
+  }
+
+  .lm-dropdown {
+    width: 80%;
+    cursor: pointer;
+  }
+
+  .lm-form-control {
+    background-color: #ffffff;
+  }
+
+  .lm-testimonials-area {
+    padding-right: 40px;
+  }
+
+  .lm-testimonials-header {
+    padding-bottom: 20pt;
+  }
+
+  .lm-testimonial-profile {
+    font-family: 'Gotham-Book';
+    text-align: center;
+  }
+
+  .lm-testimonial-who {
+    font-weight: bold;
+  }
+
+  .lm-testimonial-from {
+    font-family: 'Gotham-Book';
+  }
+
+  .lm-testimonial-category {
+    font-weight: bold;
+    padding-right: 20pt;
+  }
+
+  .lm-testimonial-text {
+    padding-top: 10pt;
+    font-style: italic;
+  }
+
+  .lm-testimonial-details-link {
+    color: orange;
+  }
+
+  .lm-star-checked {
+    color: orange;
+  }
+
+  .lm-testimonial-divider {
+    border: 1px solid rgb(12, 84, 145);
+  }
+
+  .lm-dropdown-content {
+    display: none;
+    background-color: #ffffff;
+    color: #000000;
+    position: absolute;
+    margin-top: 15pt;
+    margin-left: -15pt;
+
+    -webkit-border-radius: 20px !important;
+    -moz-border-radius: 20px !important;
+    border-radius: 20px !important;
+
+    width: 95%;
+  }
+
+  .lm-dropdown-content ul {
+    list-style: none;
+    padding: 15pt 20pt 10pt 20pt;
+  }
+
+  .lm-dropdown-content li {
+    font-weight: lighter;
+    padding-left: 25pt;
+    cursor: pointer;
+  }
+
+  .lm-dropdown-content li:hover {
+    background-color: rgb(188, 211, 227);
+    font-family: 'Gotham-Bold';
+    font-weight: bolder;
   }
 
   #subcategory_content_container {
     padding-bottom: 30px;  
   }
+
+  /* ---------------------- MEDIA QUERIES ---------------------- */
 
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (max-width: 767px) {
@@ -156,10 +271,7 @@
       width: 700px;
       padding-top: 10px;
     }
-  } 
-  
-  /* Large devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 992px) {
+
     .lm-navbar-brand-logo {
       Awidth: 60%;
       max-width: 600px;
@@ -177,5 +289,18 @@
     .lm-main-section {
       padding-left: 60px;
     }
+
+    .lm-form-area {
+      padding-top: 40pt !important;
+    }
+
+    .lm-form-element {
+      padding-left: 0px !important; 
+      max-width: 490px !important;
+    }
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
   } 
   

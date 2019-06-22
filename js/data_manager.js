@@ -27,47 +27,47 @@ DataManager.categoryMapping = {
         label: 'Family',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category002: {
         label: 'Criminal Defense',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category003: {
         label: 'Business',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category004: {
         label: 'Personal Injury',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category005: {
         label: 'Bankruptcy &amp; Finances',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category006: {
         label: 'Products &amp; Services',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category007: {
         label: 'Employment',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category008: {
         label: 'Real Estate',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category009: {
         label: 'Immigration',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category010: {
         label: 'Wills, Trusts &amp; Estates',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category011: {
         label: 'Government',
         subcategories: DataManager.subcategoryMapping
     },
-    category001: {
+    category012: {
         label: 'Intellectual Property',
         subcategories: DataManager.subcategoryMapping
     }
@@ -75,4 +75,8 @@ DataManager.categoryMapping = {
 
 DataManager.getSubCategories = function(category) {
     return DataManager.categoryMapping[category]['subcategories'];
+};
+
+DataManager.findAddressByZip = function(zip) {
+         
 };
