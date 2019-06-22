@@ -216,6 +216,10 @@
     border: 1px solid rgb(12, 84, 145);
   }
 
+  .lm-testimonial-details-link {
+    cursor: pointer;
+  }
+
   .lm-dropdown-content {
     display: none;
     background-color: #ffffff;
@@ -266,8 +270,96 @@
     color: rgb(108, 194, 255);
   }
 
+  .lm-client-reviews-modal-content {
+    width: 500px;
+    padding-right: 0px !important;
+  }
+
+  .lm-client-reviews-divider {
+    width: 94%;
+    text-align: left;
+    border-bottom: 1px solid #000000;
+  }
+
+  .lm-modal-review-header {
+    font-size: 16pt;
+    font-weight: 500;
+    width: 100%;
+    padding-bottom: 10pt;
+    border-bottom: 1px solid black !important;
+  }
+
+  .lm-modal-rating-header {
+    font-size: 16pt;
+    font-weight: 500;
+  }
+
+  .lm-client-reviews-profile-container {
+    padding-left: 12pt;
+    padding-bottom: 10pt;
+  }
+
+  .lm-client-review-profile {
+    width: 60pt;
+  }
+
+  .lm-client-review-who {
+    font-size: 18pt;
+  }
+
+  .lm-client-review-from {
+    font-weight: 100;
+    font-size: 10pt;
+  }
+
+  .lm-client-review-what {
+    font-weight: 900;
+    font-size: 10pt;
+  }
+
+  .lm-bold {
+   font-weight: 900 !important; 
+  }
+
+  .lm-client-reviews-rating-entry {
+    width: 8000px;
+    font-size: 11pt !important; 
+    padding-left: 10pt;
+    padding-right: 60pt;
+    font-weight: 100;
+  }
+
+  .lm-client-reviews-rating-entry-stars {
+    text-align: right;
+  }
+
+  .lm-client-reviews-modal-close-link {
+    text-align: right;
+  }
+
+  .lm-client-reviews-modal-footer {
+    text-align: right;
+    padding-right: 23pt;
+    padding-bottom: 2pt;
+  }
+
+  .lm-client-reviews-testimonial {
+    padding-top: 15pt;
+    font-size: 11pt;
+    padding-right: 10pt;
+  }
+
+  #client_reviews_ratings_container {
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+  }
+
   #subcategory_content_container {
     padding-bottom: 30px;  
+  }
+
+  #close_client_review_link {
+    cursor: pointer;
   }
 
   #overlay_block {
@@ -282,6 +374,10 @@
     top: 0;
     left: 0;
     z-index: 1000;
+  }
+
+  #testimonial_template {
+    display: none;
   }
 
   /* ---------------------- MEDIA QUERIES ---------------------- */

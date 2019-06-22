@@ -22,7 +22,12 @@ LmConstants.CATEGORY_CONTENT_HOLDER = '#category_content';
 LmConstants.ZIP_SEARCHFIELD = '#zip';
 LmConstants.ZIP_SEARCHFIELD_CONTENT = '#zip_content';
 
+LmConstants.REVIEWS_MODAL = '#client_reviews_modal';
+
 LmConstants.BLOCK_OVERLAY = '#overlay_block';
+
+LmConstants.REVIEW_CLOSE_LINK = '#close_client_review_link';
+LmConstants.REVIEW_CLOSE_BTN = '#close_client_review_btn';
 
 // --------------------------------------------------------------------
 
@@ -48,6 +53,7 @@ LmApp.init = function() {
     DataManager.init();
 
     LmApp.initCategoriesDropDown();
+    LmApp.constructTestimonials();
 
     // Attach handlers to the zip search field
     var zipId = LmConstants.ZIP_SEARCHFIELD;
@@ -195,6 +201,14 @@ $LM(LmConstants.CATEGORY_DROPDOWN).onclick = function(evt){
     LmApp.openCategoriesDropDown(! flag);
 };
 
+$LM(LmConstants.REVIEW_CLOSE_BTN).onclick = function(evt) {
+    $LM(LmConstants.REVIEWS_MODAL).style.display = 'none';
+};
+
+$LM(LmConstants.REVIEW_CLOSE_LINK).onclick = function(evt) {
+    $LM(LmConstants.REVIEWS_MODAL).style.display = 'none';
+};
+
 /**
  * Handle value change in zip code search field
  * 
@@ -228,6 +242,70 @@ LmApp.handleChangeZip = function(evt) {
     }
 };
 
+LmApp.createClientReviewEntry = function(label, numStars) {
+    var html = ''
+        + '<div class="lm-client-reviews-rating-entry">'
+        +   label 
+        +   '<span class="lm-client-reviews-rating-stars pull-right">';
+
+    for (var i=0; i<numStars; i++) {
+        html += '<span class="fa fa-star lm-star-checked"></span>';
+    }
+
+    for (var i=numStars; i<5; i++) {
+        html += '<span class="fa fa-star"></span>';
+    }
+
+    html += '</span></div>';
+    return html;
+};
+
+LmApp.constructTestimonials = function() {
+    var entries = DataManager.testimonials;
+    var template = $LM('#testimonial_template');
+
+    var html = '';
+    for (var i=0; i<entries.length; i++) {
+        var entry = entries[i];
+        var temp = template.innerHTML;
+        temp = temp.replace('__IMAGE__', entry['img']);
+        temp = temp.replace('__FROM__', entry['from']);
+        temp = temp.replace('__WHO__', entry['who']);
+        temp = temp.replace('__WHAT__', entry['what']);
+        temp = temp.replace('__ONCLICK__', 'LmApp.showClientReviewsDialog(' + i + ')');
+
+        html += temp;
+
+        if (i != entries.length -1) {
+            html += '<hr class="lm-testimonial-divider"/>';
+        }
+    }
+
+    var original = $LM('#testimonials_container').innerHTML;
+    $LM('#testimonials_container').innerHTML = original + html;
+};
+
+LmApp.showClientReviewsDialog = function(testimonialIndex) {
+    $LM(LmConstants.REVIEWS_MODAL).style.display = 'block';
+
+    var entries = DataManager.clientReviewEntries;
+    var ratingHtml = LmApp.createClientReviewEntry('<span class="lm-bold">' + entries[0][0] + '</span>', entries[0][1]);
+
+    for (var i=1; i<entries.length; i++) {
+        var entry = entries[i];
+        ratingHtml += LmApp.createClientReviewEntry(entry[0], entry[1]);
+    }
+
+    var testimonial = DataManager.testimonials[testimonialIndex];
+
+    $LM('#review_img').src = testimonial['img'];
+    $LM('#review_who').innerHTML = testimonial['who'];
+    $LM('#review_from').innerHTML = testimonial['from'];
+    $LM('#review_what').innerHTML = testimonial['what'];
+
+    $LM('#client_reviews_ratings_container').innerHTML = ratingHtml;
+};
+
 LmApp.activateBlockOverlay = function(flag) {
     var overlay = $LM(LmConstants.BLOCK_OVERLAY);
     
@@ -238,7 +316,9 @@ LmApp.activateBlockOverlay = function(flag) {
     }
 };
 
+
 LmApp.init();
 
 //LmApp.showSubcategoriesDialog('category001');
+//LmApp.showClientReviewsDialog(1);
 

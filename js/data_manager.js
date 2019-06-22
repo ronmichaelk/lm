@@ -90,6 +90,39 @@ DataManager.categoryMapping = {
     }
 };
 
+DataManager.clientReviewEntries = [
+    ['Overall', 5], 
+    ['Responded in a timely manner', 4],
+    ['Answered questions early', 5],
+    ['Understood needs', 4],
+    ['Gave complete and clear information', 5],
+    ['Knowledgeable in legal area', 4], 
+    ['Good value for money', 5], 
+    ['Would hire again', 4],
+    ['Would recommend to friend', 5]
+];
+
+DataManager.testimonials = [
+    {
+        img: '/img/profile_mitchelle.png',
+        who: 'Mitchell M.',
+        from: 'Cherry Hill, NJ',
+        what: 'Family Law'
+    },
+    {
+        img: '/img/profile_joel.png',
+        who: 'Joel C',
+        from: 'Little Rock, AK',
+        what: 'Job &amp; Employment Law'
+    },
+    {
+        img: '/img/profile_brigida.png',
+        who: 'Brigida R.',
+        from: 'Dallas, TX',
+        what: 'Family Law'
+    }
+];
+
 /**
  * Get subcategories of the specified category code
  * 
