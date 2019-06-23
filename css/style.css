@@ -70,8 +70,10 @@
   }
   
   .lm-main-section {
-    background-color: rgb(3, 45, 108);
     color: #ffffff;
+
+    background: -webkit-radial-gradient(bottom rgb(20, 121, 182) 5%, rgb(3, 45, 108) 50%);
+    background: radial-gradient(at bottom, rgb(20, 121, 182) 5%,  rgb(3, 45, 108) 50%)
   }
   
   .lm-tagline-large1 {
@@ -543,6 +545,8 @@
 
     .lm-main-section {
       padding-left: 60px;
+      padding-top: 10pt;
+      padding-bottom: 30pt;
     }
 
     .lm-form-area {
@@ -551,7 +555,7 @@
 
     .lm-form-element {
       padding-left: 0px !important; 
-      max-width: 490px !important;
+      max-width: 80% !important;
     }
   } 
   
