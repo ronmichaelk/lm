@@ -173,6 +173,17 @@
     background-color: #ffffff;
   }
 
+  .lm-form-area-footer {
+    font-family: 'Gotham-Book';
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .lm-other-categories-link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   .lm-testimonials-area {
     padding-right: 40px;
   }
@@ -206,6 +217,7 @@
 
   .lm-testimonial-details-link {
     color: orange;
+    text-align: right;
   }
 
   .lm-star-checked {
@@ -322,7 +334,7 @@
   }
 
   .lm-client-reviews-rating-entry {
-    width: 8000px;
+    width: 800px;
     font-size: 11pt !important; 
     padding-left: 10pt;
     padding-right: 60pt;
@@ -347,6 +359,86 @@
     padding-top: 15pt;
     font-size: 11pt;
     padding-right: 10pt;
+  }
+
+  .lm-other-categories-modal-content {
+    padding-left: 7pt;
+  }
+
+  .lm-other-categories-subtitle {
+    font-family: 'Gotham-Book';
+    font-size: 11pt;
+    font-weight: 100;
+  }
+
+  .lm-other-categories-body {
+    font-family: 'Gotham-Book';
+    font-size: 9pt;
+    font-weight: 100;
+    padding-top: 0px;
+    padding-bottom: 20pt;
+  }
+
+  .lm-other-categories-body td{
+    color: rgb(111, 148, 197);
+  }
+
+  .lm-footer {
+     background-color: #ffffff;
+     width: 100% !important;
+     padding: 40px 10px 60px 60px;
+     margin-top: auto;
+     margin-bottom: auto;
+   }
+
+  .lm-footer-md {
+    background-color: #ffffff;
+    padding-top: 20px;
+  }
+
+  .lm-footer-logo {
+    width: 200px;
+  }
+
+  .lm-footer-logo-container-md {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lm-footer-logo-md {
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    width: 200px;
+  }
+
+  .lm-footer-links {
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Gotham-Book';
+    font-weight: 100;
+    vertical-align: middle;    
+    margin-top: auto;
+    margin-bottom: auto;
+ }
+
+  .lm-footer-links-divider {
+    padding-left: 10pt;
+    padding-right: 10pt;
+    font-weight: 900;
+    font-size: 18pt;
+    vertical-align: middle;    
+  }
+
+  .lm-footer-logo-truste {
+    height: 50px;
+  }
+
+  .lm-footer-logo-thirdparty {
+    text-align: center;
+  }
+
+  .lm-footer-logo-bb {
+    width: 150px;
   }
 
   #client_reviews_ratings_container {
@@ -382,7 +474,23 @@
 
   /* ---------------------- MEDIA QUERIES ---------------------- */
 
-  /* Medium devices (landscape tablets, 768px and up) */
+  /* Mobile devices  */
+  @media only screen and (max-width: 500px) {
+    .lm-testimonial-details-link {
+      text-align: center;
+    }
+
+    .lm-testimonial-body {
+      text-align: center !important;
+    }
+
+    .lm-testimonial-category {
+      padding: 0px;
+    }
+
+  }
+ 
+  /* Mobile devices  */
   @media only screen and (max-width: 767px) {
     .lm-tagline-large1 {
       text-align: center;
@@ -391,9 +499,28 @@
     .lm-tagline-large2 {
       text-align: center;
     }
+
+    .lm-form-area {
+      padding-top: 50pt !important;
+      padding-bottom: 50pt !important;
+    }
+
+    .lm-testimonials-area {
+      text-align: center;
+    }
+
+    .lm-testimonial-body {
+      padding-top: 10pt;
+      text-align: left;
+    }
+
+    .lm-testimonial-text {
+      text-align: center;
+    }
+
   } 
   
-  /* Medium devices (landscape tablets, 768px and up) */
+  /* Medium devices  */
   @media only screen and (min-width: 768px) {
     #subcategory_content_container div {
       width: 700px;
