@@ -20,7 +20,7 @@
 </head>
 <body>
     <!-- Image and text -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light">
         <a class="navbar-brand" href="#">
           <img src="img/logo_with_tagline.png" alt="legalmatch logo" 
             class="d-inline-block align-top lm-navbar-brand-logo" alt="">
@@ -54,9 +54,12 @@
                         <div class="lm-dropdown-content" id="category_content">
                         </div>
                     </div>
-                </div>            
+                </div> 
+                <div class="col-sm1-12 lm-form-element lm-form-area-footer">
+                    Can't find your category? <span class="lm-other-categories-link" id="other_categories_link">Click here</span>.
+                </div>     
             </div>
-            <section class="hidden col-md-6 lm-testimonials-area" id="testimonials_container">
+            <section class="col-md-6 col-sm-12 lm-testimonials-area" id="testimonials_container">
                 <h3 class="lm-testimonials-header">Clients review LegalMatch lawyers</h3>
 
             </section>
@@ -68,9 +71,10 @@
                             <div class="lm-testimonial-who">__WHO__</div>
                             <div class="lm-testimonial-from">__FROM__</div>
                         </div>
-                        <div class="col-sm-9 pull-left">
+                        <div class="col-sm-9 lm-testimonial-body pull-left">
                             <div>
                                 <span class="lm-testimonial-category">__WHAT__</span>
+                                <p class="d-sm-none"></p>
                                 <span>
                                     <span class="fa fa-star lm-star-checked"></span>
                                     <span class="fa fa-star lm-star-checked"></span>
@@ -80,11 +84,9 @@
                                 </span>
                             </div>
                             <p class="lm-testimonial-text"> 
-                            &ldquo;
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<!-- ut labore et-->...
-                            &rdquo;
+                            &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<!-- ut labore et-->...&rdquo;
                             </p>
-                            <div class="lm-testimonial-details-link pull-right" onclick="__ONCLICK__">
+                            <div class="lm-testimonial-details-link" onclick="__ONCLICK__">
                                 Read Review
                             </div>
                         </div>
@@ -153,74 +155,120 @@
 
     <!-- Client Review Modal -->
     <div class="modal" id="client_reviews_modal">
-            <div class="modal-dialog lm-modal-dialog modal-dialog-centered">
-                <div class="modal-content lm-modal-content lm-client-reviews-modal-content">
-    
-                    <!-- Modal Header -->
-                    <div class="modal-header lm-modal-header">
-                        <span class="lm-modal-review-header">CLIENT REVIEWS</span>
-                        <button type="button" class="close" onFocus="this.blur()" id="close_client_review_btn">&times;</button>
-                    </div>
-    
-                    <!-- Modal body -->
-                    <div class="modal-body lm-modal-body">
-                        <div class="row lm-client-reviews-profile-container">
-                            <span class="lm-client-review-profile">
-                                <img id="review_img" src=""/> 
-                            </span>
-                            <span>
-                                <div class="lm-client-review-who" id="review_who"></div>
-                                <div class="lm-client-review-from" id="review_from"></div>
-                                <div class="lm-client-review-what" id="review_what"></div>
-                            </span>
-                        </div>
+        <div class="modal-dialog lm-modal-dialog modal-dialog-centered">
+            <div class="modal-content lm-modal-content lm-client-reviews-modal-content">
 
-                        <span class="lm-modal-rating-header">Rating (29 users)
-                            &nbsp;  
-                            <span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star lm-star-checked"></span>
-                                <span class="fa fa-star"></span>
-                            </span>
-                        </span>
-
-                        <div class="lm-client-reviews-divider"></div>
-
-                        <div class="row" id="client_reviews_ratings_container">
-                        </div>
-
-                        <div class="lm-client-reviews-divider"></div>
-
-                        <div class="lm-client-reviews-testimonial">
-                            <div>
-                                <span>
-                                    <span class="fa fa-star lm-star-checked"></span>
-                                    <span class="fa fa-star lm-star-checked"></span>
-                                    <span class="fa fa-star lm-star-checked"></span>
-                                    <span class="fa fa-star lm-star-checked"></span>
-                                    <span class="fa fa-star lm-star-checked"></span>
-                                </span>
-                                <span class="lm-bold">by Dexter Marchal, 06/10/2016</span>
-                            </div>
-
-                            <p></p>
-
-                            <p>
-                                Deb did a great job. Got my bench warrant set aside... was sure i was going to jail... phew Judge seemed to respect her and i got what i 
-                            </p>    
-                        </div>
-    
-                        <div class="lm-client-reviews-modal-footer">
-                            <span class="lm-client-reviews-modal-close-link" id="close_client_review_link">CLOSE</span>
-                        </div>
-                    </div>
-    
+                <!-- Modal Header -->
+                <div class="modal-header lm-modal-header">
+                    <span class="lm-modal-review-header">CLIENT REVIEWS</span>
+                    <button type="button" class="close" onFocus="this.blur()" id="close_client_review_btn">&times;</button>
                 </div>
+
+                <!-- Modal body -->
+                <div class="modal-body lm-modal-body">
+                    <div class="row lm-client-reviews-profile-container">
+                        <span class="lm-client-review-profile">
+                            <img id="review_img" src=""/> 
+                        </span>
+                        <span>
+                            <div class="lm-client-review-who" id="review_who"></div>
+                            <div class="lm-client-review-from" id="review_from"></div>
+                            <div class="lm-client-review-what" id="review_what"></div>
+                        </span>
+                    </div>
+
+                    <span class="lm-modal-rating-header">Rating (29 users)
+                        &nbsp;  
+                        <span>
+                            <span class="fa fa-star lm-star-checked"></span>
+                            <span class="fa fa-star lm-star-checked"></span>
+                            <span class="fa fa-star lm-star-checked"></span>
+                            <span class="fa fa-star lm-star-checked"></span>
+                            <span class="fa fa-star"></span>
+                        </span>
+                    </span>
+
+                    <div class="lm-client-reviews-divider"></div>
+
+                    <div class="row" id="client_reviews_ratings_container">
+                    </div>
+
+                    <div class="lm-client-reviews-divider"></div>
+
+                    <div class="lm-client-reviews-testimonial">
+                        <div>
+                            <span>
+                                <span class="fa fa-star lm-star-checked"></span>
+                                <span class="fa fa-star lm-star-checked"></span>
+                                <span class="fa fa-star lm-star-checked"></span>
+                                <span class="fa fa-star lm-star-checked"></span>
+                                <span class="fa fa-star lm-star-checked"></span>
+                            </span>
+                            <span class="lm-bold">by Dexter Marchal, 06/10/2016</span>
+                        </div>
+
+                        <p></p>
+
+                        <p>
+                            Deb did a great job. Got my bench warrant set aside... was sure i was going to jail... phew Judge seemed to respect her and i got what i 
+                        </p>    
+                    </div>
+
+                    <div class="lm-client-reviews-modal-footer">
+                        <span class="lm-client-reviews-modal-close-link" id="close_client_review_link">CLOSE</span>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
 
+    <!-- Other Categories Modal -->
+    <div class="modal" id="other_categories_modal">
+        <div class="modal-dialog lm-modal-dialog modal-dialog-centered">
+            <div class="modal-content  lm-other-categories-modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header lm-modal-header">
+                    <p>
+                        OTHER CATEGORIES
+                        <br/>
+                        <span class="lm-other-categories-subtitle">
+                            Choose the categories that best fits your categories
+                        </span>
+                    </p>
+
+                    <button type="button" class="close" onFocus="this.blur()" id="close_other_categories_btn">&times;</button>
+    
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body lm-other-categories-body">
+                    <table>
+                        <tbody>
+                            <tr><td>Abuse(Child Domestic Sexual)</td>            <td>Loremipsum Dolorsitamet</td></tr>
+                            <tr><td>Agencies & Administration</td>               <td>Lonsectetur Scingelit (Baseererkj,Mereit)</td></tr> 
+                            <tr><td>Automobile(DUI,Crimes,Speeding)</td>         <td>Miam Euvelit</td></tr>
+                            <tr><td>Automobiles(Accident, Insurance)</td>        <td>Mempor Auctor  (Estiarma,Toeruslej)</td></tr>
+                            <tr><td>Banking (Business,Consumer)</td>             <td>Nisultricies Dictumest</td></tr>            
+                            <tr><td>Bars & Restaurants</td>                      <td>Ntfring Sodalelit(Aeeticl Restoustoust)</td></tr>
+                            <tr><td>Business Formation & Dissolution</td>        <td>Ntvarius Lectus & Congue</td></tr>
+                            <tr><td>Children(Adoption,Custody,Support)</td>      <td>Pellentesque</td></tr>
+                            <tr><td>Class Action(Bad Drugs,Products)</td>        <td>Rigula Alliquamattis (Nestusotu,Wewreist)</td></tr>
+                            <tr><td>Commercial Law and Contracts</td>            <td>Set Tigulempor</td></tr>
+                            <tr><td>Commercial Real Estate</td>                  <td>Sehicula Sedsitamet</td></tr>
+                            <tr><td>Constitutional Law</td>                      <td>Seque Nesturre</td></tr>
+                            <tr><td>Construction(Dispules,liens)</td>            <td>Tollis Gaurissed</td></tr>
+                            <tr><td>Categories item Here</td>                    <td>Tempor Auctor (Estiarma,Toeruslej)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+        
     <div id="overlay_block">
     </div>
     
