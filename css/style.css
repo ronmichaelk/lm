@@ -543,6 +543,8 @@
 
     .lm-main-section {
       padding-left: 60px;
+      padding-top: 10pt;
+      padding-bottom: 30pt;
     }
 
     .lm-form-area {
@@ -551,7 +553,7 @@
 
     .lm-form-element {
       padding-left: 0px !important; 
-      max-width: 490px !important;
+      max-width: 80% !important;
     }
   } 
   
