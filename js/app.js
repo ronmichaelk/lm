@@ -29,6 +29,10 @@ LmConstants.BLOCK_OVERLAY = '#overlay_block';
 LmConstants.REVIEW_CLOSE_LINK = '#close_client_review_link';
 LmConstants.REVIEW_CLOSE_BTN = '#close_client_review_btn';
 
+LmConstants.OTHER_CATEGORIES_MODAL = '#other_categories_modal';
+LmConstants.OTHER_CATEGORIES_LINK = '#other_categories_link';
+LmConstants.OTHER_CATEGORIES_CLOSE = '#close_other_categories_btn';
+
 // --------------------------------------------------------------------
 
 function LmApp() {
@@ -207,6 +211,14 @@ $LM(LmConstants.REVIEW_CLOSE_BTN).onclick = function(evt) {
 
 $LM(LmConstants.REVIEW_CLOSE_LINK).onclick = function(evt) {
     $LM(LmConstants.REVIEWS_MODAL).style.display = 'none';
+};
+
+$LM(LmConstants.OTHER_CATEGORIES_LINK).onclick = function(evt) {
+    $LM(LmConstants.OTHER_CATEGORIES_MODAL).style.display = 'block';
+};
+
+$LM(LmConstants.OTHER_CATEGORIES_CLOSE).onclick = function(evt) {
+    $LM(LmConstants.OTHER_CATEGORIES_MODAL).style.display = 'none';
 };
 
 /**
